@@ -48,8 +48,9 @@ app.get('/grab', (req, res) => { // captura los datos enviados por el cliente
     }
 });
 
+const escapeHtml = require('escape-html');
 app.get('/loot', (req, res) => { // envía los datos guardados al cliente
-    res.send(texto);
+    res.send(escapeHtml(texto));
 });
 
 app.get('/clear', (req, res) => { // limpia el archivo de salida
